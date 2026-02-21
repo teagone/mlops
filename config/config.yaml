@@ -1,0 +1,43 @@
+# Hydra Configuration for MLOps Assignment
+
+# Data paths
+data:
+  raw_path: "data/raw/lung_cancer.csv"
+  processed_path: "data/processed/lung_cancer_processed.csv"
+  test_size: 0.2
+  random_state: 42
+
+# Model configuration
+model:
+  experiment_name: "lung_cancer_experiment"
+  target_column: "Level"
+  metric: "Accuracy"  # Options: Accuracy, F1, Precision, Recall
+  fold: 5  # k-fold cross-validation
+  n_select: 3  # Top N models to compare
+  
+# PyCaret preprocessing
+preprocessing:
+  normalize: true
+  feature_selection: true
+  remove_multicollinearity: true
+  multicollinearity_threshold: 0.95
+  bin_numeric_features: ["Age"]  # Bin age into categories
+  create_interaction_features: true
+  
+# Hyperparameter tuning
+tuning:
+  optimize: "Accuracy"
+  n_iter: 10
+  random_state: 42
+
+# MLflow configuration
+mlflow:
+  tracking_uri: "./mlruns"
+  registry_uri: "./mlruns"
+  model_name: "lung_cancer_risk_model"
+  model_stage: "Staging"
+
+# Paths
+paths:
+  model_save_path: "models/lung_cancer_model"
+  reports_path: "reports/figures"

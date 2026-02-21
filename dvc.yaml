@@ -1,0 +1,27 @@
+stages:
+  prepare:
+    cmd: python src/features/build_features.py
+    deps:
+      - data/raw/lung_cancer.csv
+      - src/features/build_features.py
+    outs:
+      - data/processed/lung_cancer_processed.csv
+    params:
+      - config.data.raw_path
+      - config.data.processed_path
+
+  train:
+    cmd: python src/models/train.py
+    deps:
+      - data/raw/lung_cancer.csv
+      - src/models/train.py
+      - src/models/utils.py
+      - config/config.yaml
+    outs:
+      - models/lung_cancer_model.pkl
+      - reports/figures
+    params:
+      - config.model
+      - config.preprocessing
+      - config.tuning
+      - config.mlflow

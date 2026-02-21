@@ -1,0 +1,57 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+    
+    - name: Install dependencies
+      run: poetry install --no-interaction
+    
+    - name: Build Docker image
+      run: |
+        docker build -t mlops-app:latest .
+    
+    - name: Deploy to Render
+      env:
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+      run: |
+        # Note: This is a placeholder. Actual deployment depends on your Render setup.
+        # You may need to use Render CLI or API to trigger deployment.
+        echo "Deployment to Render would happen here"
+        echo "For actual deployment, configure Render webhook or use Render CLI"
+    
+    # Alternative: Deploy using Docker to a container registry
+    - name: Log in to Docker Hub (optional)
+      if: false  # Set to true and add secrets if using Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    
+    - name: Push Docker image (optional)
+      if: false  # Set to true if using container registry
+      run: |
+        docker tag mlops-app:latest your-registry/mlops-app:latest
+        docker push your-registry/mlops-app:latest
