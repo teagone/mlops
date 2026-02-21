@@ -1,0 +1,6 @@
+artifact_location: file:///C:/Users/teaga/Desktop/mlops/mlruns/667412238049537892
+creation_time: 1771667217364
+experiment_id: '667412238049537892'
+last_update_time: 1771667217364
+lifecycle_stage: active
+name: lung_cancer_experiment

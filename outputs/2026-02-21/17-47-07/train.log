@@ -1,0 +1,9 @@
+[2026-02-21 20:25:49,936][traitlets][WARNING] - Exception in interact callback: [Errno 22] Invalid argument
+Traceback (most recent call last):
+  File "C:\Users\teaga\AppData\Local\pypoetry\Cache\virtualenvs\mlops-assignment-1KTDrNrn-py3.11\Lib\site-packages\ipywidgets\widgets\interaction.py", line 237, in update
+    with self.out:
+  File "C:\Users\teaga\AppData\Local\pypoetry\Cache\virtualenvs\mlops-assignment-1KTDrNrn-py3.11\Lib\site-packages\ipywidgets\widgets\widget_output.py", line 149, in __exit__
+    self._flush()
+  File "C:\Users\teaga\AppData\Local\pypoetry\Cache\virtualenvs\mlops-assignment-1KTDrNrn-py3.11\Lib\site-packages\ipywidgets\widgets\widget_output.py", line 159, in _flush
+    sys.stdout.flush()
+OSError: [Errno 22] Invalid argument

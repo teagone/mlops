@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/teaga/Desktop/mlops/mlruns/667412238049537892/91a9c3be2da943fdb8f7c79485f4c387/artifacts
+end_time: 1771668221942
+entry_point_name: ''
+experiment_id: '667412238049537892'
+lifecycle_stage: active
+run_id: 91a9c3be2da943fdb8f7c79485f4c387
+run_name: trusting-shrew-119
+run_uuid: 91a9c3be2da943fdb8f7c79485f4c387
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1771668207869
+status: 3
+tags: []
+user_id: teaga

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/teaga/Desktop/mlops/mlruns/667412238049537892/816a8bef88954448954e6dbdc0e96c52/artifacts
+end_time: 1771669155873
+entry_point_name: ''
+experiment_id: '667412238049537892'
+lifecycle_stage: active
+run_id: 816a8bef88954448954e6dbdc0e96c52
+run_name: zealous-bat-623
+run_uuid: 816a8bef88954448954e6dbdc0e96c52
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1771669147745
+status: 3
+tags: []
+user_id: teaga

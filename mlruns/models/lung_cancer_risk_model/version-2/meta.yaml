@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1771669155758
+current_stage: Staging
+description: null
+last_updated_timestamp: 1771669155822
+name: lung_cancer_risk_model
+run_id: 816a8bef88954448954e6dbdc0e96c52
+run_link: null
+source: file:///C:/Users/teaga/Desktop/mlops/mlruns/667412238049537892/816a8bef88954448954e6dbdc0e96c52/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/teaga/Desktop/mlops/mlruns/667412238049537892/816a8bef88954448954e6dbdc0e96c52/artifacts/model
+user_id: null
+version: 2
