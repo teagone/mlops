@@ -1,0 +1,36 @@
+data:
+  raw_path: data/raw/heart.csv
+  processed_path: data/processed/heart_processed.csv
+  test_size: 0.2
+  random_state: 42
+
+model:
+  experiment_name: heart_disease_experiment
+  target_column: HeartDisease
+  metric: Accuracy
+  fold: 5
+  n_select: 3
+
+preprocessing:
+  normalize: true
+  feature_selection: true
+  remove_multicollinearity: true
+  multicollinearity_threshold: 0.95
+  bin_numeric_features:
+    - Age
+  create_interaction_features: true
+
+tuning:
+  optimize: Accuracy
+  n_iter: 10
+  random_state: 42
+
+mlflow:
+  tracking_uri: ./mlruns
+  registry_uri: ./mlruns
+  model_name: heart_disease_model
+  model_stage: Staging
+
+paths:
+  model_save_path: models/heart_disease_model
+  reports_path: reports/figures
